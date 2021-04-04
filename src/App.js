@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, Fragment } from "react";
+import axios from "axios";
+import SearchComponent from "./Component/SearchComponent";
+import GitUser from "./Component/GitUser";
+class App extends Component {
+  state = {
+    term: "",
+    reposData: "",
+    loading: false,
+  };
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  onTermSubmit = async (term) => {
+    let client_id = "Iv1.83acb85739487d9e";
+    let client_secret = "afefad274249171ec50ebdb1551394b72c676433";
+    let response = await axios.get(
+      `https:api.github.com/users/${term}?Client_Id${client_id}&Client_Secret${client_secret}`
+    );
+    let repos = await axios.get(
+      `https:api.github.com/users/${term}/repos?Client_Id${client_id}&Client_Secret${client_secret}`
+    );
+    this.setState({ term: response.data, reposData: repos, loading: true });
+  };
+  render() {
+    return (
+      <Fragment>
+        <SearchComponent onTermSubmit={this.onTermSubmit} />
+        <section>
+          <hr className="hr" />
+          <GitUser
+            users={this.state.term}
+            repos={this.state.reposData}
+            loading={this.state.loading}
+          />
+        </section>
+      </Fragment>
+    );
+  }
 }
-
 export default App;

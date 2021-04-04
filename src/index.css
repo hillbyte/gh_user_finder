@@ -1,13 +1,100 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #352e2e;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+section article {
+  background-color: #e0dce98c;
+}
+img {
+  width: 100%;
+  border-radius: 10%;
+  padding: 10px;
+  object-fit: cover;
+  border: 3px solid #4169e11f;
+  margin: 10px;
+}
+
+ul:first-child li {
+  border-radius: 0;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  margin: 2px !important;
+  padding: 10px !important;
+  border-bottom: none !important;
+}
+
+.mapBlock {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 4px solid #efefef;
+  margin: 14px 15px;
+}
+
+.mapBlock div {
+  flex-basis: 20%;
+  border-radius: 5%;
+  margin: 5px;
+  background-color: #4640558c;
+  padding: 10px;
+  border: 1px solid #9a9;
+  position: relative;
+}
+
+.mapBlock div ul {
+  list-style: none;
+  padding: 4px;
+}
+.mapBlock div ul li {
+  padding: 3px;
+}
+.mapBlock div h3 {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.custom3 {
+  margin-left: 26px;
+  border-bottom: 4px solid royalblue;
+  padding-bottom: 6px;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+  color: royalblue;
+  font-weight: bold;
+}
+
+.mapBlock .custom_link {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+}
+
+form {
+  position: relative;
+}
+.microphone i {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  color: rgb(77, 72, 72);
+  font-weight: 600;
+  font-size: 22px;
 }
