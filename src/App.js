@@ -16,6 +16,7 @@ class App extends Component {
       `https:api.github.com/users/${term}?Client_Id${client_id}&Client_Secret${client_secret}`,
        {
  headers: {
+ 	'Content-Type': 'application/json',
    "Access-Control-Allow-Origin": "*"
  }
 }
@@ -24,6 +25,7 @@ class App extends Component {
       `https:api.github.com/users/${term}/repos?Client_Id${client_id}&Client_Secret${client_secret}`,
        {
  headers: {
+ 	'Content-Type': 'application/json',
    "Access-Control-Allow-Origin": "*"
  }
 }
