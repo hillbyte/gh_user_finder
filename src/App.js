@@ -10,8 +10,8 @@ class App extends Component {
   };
 
   onTermSubmit = async (term) => {
-    let client_id =process.env.CLIENT_ID;
-    let client_secret =process.env.CLIENT_SECRET;
+    let client_id =process.env.REACT_APP_CLIENT_ID;
+    let client_secret =process.env.REACT_APP_CLIENT_SECRET;
     let response = await axios.get(
       `https:api.github.com/users/${term}?Client_Id${client_id}&Client_Secret${client_secret}`
     );
