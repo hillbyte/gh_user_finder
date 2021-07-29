@@ -10,8 +10,8 @@ class App extends Component {
   };
 
   onTermSubmit = async (term) => {
-    let client_id = "Iv1.83acb85739487d9e";
-    let client_secret = "afefad274249171ec50ebdb1551394b72c676433";
+    let client_id =process.env.CLIENT_ID;
+    let client_secret =process.env.CLIENT_SECRET;
     let response = await axios.get(
       `https:api.github.com/users/${term}?Client_Id${client_id}&Client_Secret${client_secret}`
     );
